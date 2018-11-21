@@ -2,11 +2,12 @@ var hex2rgb = require("../lib/hex2rgb");
 var assert = require("assert");
 var should = require("chai").should();
 var expect = require("chai").expect;
+var sinon = require("sinon");
 
 describe.only("hex2rgb", function() {
     it("should return an error if the value is not a hex code", function(done) {
 
-        hex2rgb("blue", function (error, result){
+        hex2rgb.convert("blue", function (error, result){
             
             //assert(error);
 
@@ -19,7 +20,7 @@ describe.only("hex2rgb", function() {
     });
 
     it("should return a correctly converted rgb value", function(done) {
-        hex2rgb("#fff", function(error, result){
+        hex2rgb.convert("#fff", function(error, result){
             
             //assert.strictEqual(error, null);
             //assert.deepEqual(result, [255, 255, 255]);

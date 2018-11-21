@@ -16,3 +16,6 @@ testling
 testling -u
 
 Lesson 16 (https://travis-ci.org)
+
+lesson 17 
+npm install sinon --save-dev

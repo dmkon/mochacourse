@@ -8,3 +8,9 @@ mocha init browser
 npm install -g browserify
 browserify test/hex2rgb.test.js -o browser/tests.js
 open browser/index.html
+
+
+Lesson 15
+npm install -g testling
+testling
+testling -u

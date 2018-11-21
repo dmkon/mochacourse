@@ -3,7 +3,7 @@ var assert = require("assert");
 var should = require("chai").should();
 var expect = require("chai").expect;
 
-describe("hex2rgb", function() {
+describe.only("hex2rgb", function() {
     it("should return an error if the value is not a hex code", function(done) {
 
         hex2rgb("blue", function (error, result){

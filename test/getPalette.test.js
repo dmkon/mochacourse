@@ -1,16 +1,35 @@
 var getPalette = require("../lib/getPalette");
 var assert = require("assert");
+var fs = require("fs");
+
+var configFile = process.cwd() + "/config.json";
+
+function writeConfig(config, callback) {
+    fs.writeFile(configFile, JSON.stringify(config), callback);
+}
 
 describe("getPalette", function() {
-    it("should throw an error if the result is not an array", function() {
+    
+    var config = {};
 
-        function fetch() {
-            return "not array";
-        }
+    before(function(done) {
+        fs.readFile(configFile, function(err, contents) {
+            config = JSON.parse(contents.toString());
+            done();
+        })
+    });
 
-        assert.throws(function() {
-            getPalette(fetch);
-        }, /is not an array/)
+    afterEach(function(done) {
+        writeConfig(config, done);
+    });
+
+    it("should throw an error if the result is not an array", function(done) {
+
+        writeConfig({palette: "string"}, function(err){
+            assert.throws(getPalette, /is not an array/);
+            done();
+        });
+        
     });
     
     it("should return an array with 3 items", function() {

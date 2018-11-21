@@ -1,7 +1,7 @@
 var getPalette = require("../lib/getPalette");
-var expect = require("chai").expect;
 var assert = require("chai").assert;
 require("chai").should();
+var expect = require("chai").expect;
 
 describe("getPalette", function() {
 
@@ -12,6 +12,7 @@ describe("getPalette", function() {
         };
         
         expect(notArray).to.throw(/is not an array/);
+
         done();
     });
     
@@ -22,7 +23,8 @@ describe("getPalette", function() {
         //assert.isArray(palette, "did not return an array");
         //assert.lengthOf(palette, 3, "did not return 3 items");
 
-        palette.should.be.an("array").with.length(3);
+        //palette.should.be.an("array").with.length(3);
+        expect(palette.should.be.an("array").with.length(3));
 
     });
 });

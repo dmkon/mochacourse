@@ -14,3 +14,5 @@ Lesson 15 (https://ci.testling.com)
 npm install -g testling
 testling
 testling -u
+
+Lesson 16 (https://travis-ci.org)

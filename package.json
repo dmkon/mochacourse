@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "test": "./node_modules/.bin/mocha -R list -b",
     "test1": "./node_modules/.bin/mocha -R spec",
     "test2": "./node_modules/.bin/mocha -R list"
   },

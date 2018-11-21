@@ -1,8 +1,8 @@
 var hex2rgb = require("../lib/hex2rgb");
 var assert = require("assert");
 
-describe("hex2rgb", function() {
-    it("should return an error if the value is not a hex code", function(done) {
+describe.only("hex2rgb", function() {
+    it.skip("should return an error if the value is not a hex code", function(done) {
 
         hex2rgb("blue", function (error, result){
             assert(error);
@@ -16,5 +16,7 @@ describe("hex2rgb", function() {
             assert.deepEqual(result, [255, 255, 255]);
             done();
         });
-    })
+    });
+
+
 });

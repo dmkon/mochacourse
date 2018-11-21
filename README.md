@@ -10,7 +10,7 @@ browserify test/hex2rgb.test.js -o browser/tests.js
 open browser/index.html
 
 
-Lesson 15
+Lesson 15 (https://ci.testling.com)
 npm install -g testling
 testling
 testling -u
